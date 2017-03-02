@@ -1,0 +1,25 @@
+<html class="register">
+  <body class="register-container">
+
+    <div class="register-page">
+      <h1 class="title-register">Register</h1>
+      <form [formGroup]="registerForm" class="mars-form">
+        <fieldset>
+          <input type="text" required  formControlName="name" placeholder="Name" name="colonistName" />
+          <input type="number"  formControlName="age" placeholder="Age" name="colonistAge" />
+          <div class="custom-select">
+            <select required formControlName="job_id" name="job_id">
+                <option value="none">Select occupation</option> 
+                <option *ngFor="let job of marsJobs" value="{{ job.id }}">{{ job.name }}</option>
+            </select>
+          </div>
+          <button type="button" (click)="logColonist()">Log Colonist</button>
+        </fieldset>
+      </form>
+      <fieldset>
+        <!--<button type="submit">Check in</button>-->
+      </fieldset>
+    </div>
+
+  </body>
+</html>

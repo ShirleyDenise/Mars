@@ -1,0 +1,57 @@
+.report{
+    background-color: black;
+    margin: -8px;
+}
+
+.title-report{
+    color: white;
+    text-align: center;
+    h1{
+        margin: 0px;
+        padding-top: 2rem;
+    }
+    p{
+        margin-top: 0px;
+    }
+}
+
+
+.mars-form{
+    width: 100%;
+    text-align: center;
+    fieldset{
+        border: none;
+        padding-left: 2rem;
+        width: 95%;
+        padding: 0;
+    }
+    textarea{
+        width: 97%;
+        height: 180px;
+        
+    }
+    select{
+        width: 100%;
+        color: red;
+        font-size: 1rem;
+        border: none;
+        border-bottom: 1px solid white;
+        background-color: transparent;
+        margin-bottom: 1.5rem;
+        padding-left: .5rem;
+        padding-right: 1rem;
+        padding-bottom: .5rem;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        
+    }
+    
+}
+
+button{
+    font-size: 2rem;
+    color: white;
+    background-color: transparent;
+    border: none;
+    
+}

@@ -1,0 +1,47 @@
+.register{
+    background-color: black;
+    margin: -8px;
+    h1{
+        color: white;
+        font-size: 2rem;
+        font-weight: 100;
+        text-align: center;
+        margin: 0;
+        padding-top: 2rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.mars-form{
+    display: flex;
+    flex-direction: column;
+    padding-left: 2rem;
+    padding-right: 2rem;
+    input, select{
+        color: red;
+        font-size: 1rem;
+        border: none;
+        border-bottom: 1px solid white;
+        background-color: transparent;
+        margin-bottom: 1.5rem;
+        padding-left: .5rem;
+        padding-bottom: .5rem;
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        
+    }
+    
+}
+
+::placeholder{
+   color: red; 
+}
+
+fieldset, button{
+    text-align: center;
+    font-size: 2rem;
+    color: white;
+    background-color: transparent;
+    border: none;
+    
+}

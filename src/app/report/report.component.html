@@ -1,0 +1,26 @@
+<html class="report">
+  <body class="report-container">
+
+    <div class="report-page">
+      <div class="title-report">
+        <h1>Report Encounter</h1>
+        <p>Safety on Mars is your responsibility</p>
+      </div>
+      <form [formGroup]="reportForm" class="mars-form">
+        <fieldset>
+          <div class="custom-select">
+            <select required formControlType="type" name="type">
+                <option value="none">Select alien type</option> 
+                <option *ngFor="let a of marsAliens" value="{{ a.type }}">{{ a.type }}</option>
+            </select>
+          </div>
+          <textarea placeholder="Action taken" name="Action-taken"></textarea>
+        </fieldset> 
+        <fieldset>
+          <button type="button" (click)="logAlien()">Submit Report</button>
+        </fieldset>
+      </form>
+    </div>
+
+  </body>
+</html>
