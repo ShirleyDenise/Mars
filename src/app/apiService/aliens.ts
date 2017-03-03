@@ -14,7 +14,8 @@ export class AlienAPIService {
   constructor(private http: Http) {}
 
   getAliens() : Observable<Alien[]> {
-      
+      return this.http.get(ALIENS_URL)
+             .map((res: Response) => res.json().aliens);
   }
 
 
