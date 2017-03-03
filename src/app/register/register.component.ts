@@ -69,7 +69,7 @@ export class RegisterComponent implements OnInit {
   getMarsJobs() {
     this.jobsAPIService.getMarsJobs()
                        .subscribe((result) => {
-                        console.log('Getting jobs...');
+                        this.marsJobs = result;
                        });
     
   }
