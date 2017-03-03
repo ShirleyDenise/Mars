@@ -71,7 +71,7 @@ export class RegisterComponent implements OnInit {
 
   postNewColonist(event) {
     event.preventDefault();
-    if(this.registerForm.invalid) {
+    if(!this.registerForm.invalid) {
       //the form is invalid..
     }else {
       const name = this.registerForm.get('name').value;
@@ -79,7 +79,7 @@ export class RegisterComponent implements OnInit {
       const job_id = this.registerForm.get('job_id').value;
 
       const newColonist = new NewColonist(name, age, job_id);
-      this.colonistApiService.saveColonist(newColonist)
+      this.colonistApiService.saveColonist({ colonist: newColonist })
                              .subscribe((result) => {
                                console.log('Colonist was saved:', result);
                              });
