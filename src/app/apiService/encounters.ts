@@ -16,11 +16,15 @@ export class EncounterAPIService {
 
   constructor(private http: Http) {}
   getEncounters(): Observable<Encounter[]> {
-
+    return this.http.get(ENCOUNTERS_URL)
+             .map((res: Response) => res.json().encounters);
   }
 
   saveNewEncounter(newEncounter: EncounterPostRequest) : Observable<Encounter[]> {
-
+    const headers = new Headers();
+    headers.append('Content-Type', 'application/json');
+    return this.http.post(ENCOUNTERS_URL, newEncounter, { headers })
+                    .map((res: Response) => res.json().encounters);
   }
 
 }

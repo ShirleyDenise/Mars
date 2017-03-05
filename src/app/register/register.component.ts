@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { NewColonist, Job } from '../models';
+import { Router } from '@angular/router';
 import { JOBS_URL,
          COLONISTS_URL 
        } from '../models/API';
@@ -28,7 +29,8 @@ export class RegisterComponent implements OnInit {
   clickedButton: boolean;
 
   constructor(private colonistApiService: ColonistAPIService,
-              private jobsAPIService: JobsAPIService) { 
+              private jobsAPIService: JobsAPIService,
+              private router: Router) { 
     
     this.getMarsJobs();
 
@@ -76,7 +78,8 @@ export class RegisterComponent implements OnInit {
 
   postNewColonist(event) {
     event.preventDefault();
-    if(!this.registerForm.invalid) {
+    this.clickedButton = true;
+    if(this.registerForm.invalid) {
       //the form is invalid..
     }else {
       const name = this.registerForm.get('name').value;
@@ -85,9 +88,12 @@ export class RegisterComponent implements OnInit {
 
       const newColonist = new NewColonist(name, age, job_id);
       const colonistPostRequest = { colonist: newColonist };
+
       this.colonistApiService.saveColonist(colonistPostRequest)
                              .subscribe((result) => {
                                console.log('Colonist was saved:', result);
+
+            this.router.navigate(['encounters']);
                              });
     }
   }
