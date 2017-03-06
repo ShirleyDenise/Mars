@@ -1,3 +1,23 @@
+
+![](https://s15.postimg.org/mphmjlz8b/Screen_Shot_2017_03_05_at_20_22_50.png)
+A web-based application for Earth colonists exploring Mars using Angular 2.
+
+## Technologies Used
+Angular2
+TypeScript
+HTML5
+SCSS
+Postman
+
+## Learning experience
+First time using Angular. This app is still a work in progress.
+
+I learned how to use ngForm to create forms.
+Angular 2 Router to navigate between pages.
+
+
+
+
 # MarsColony
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.0.0-rc.0.
