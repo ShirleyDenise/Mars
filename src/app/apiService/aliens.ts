@@ -9,7 +9,7 @@ import { ALIENS_URL } from '../models/API';
 
 
 @Injectable()
-export class AlienAPIService {
+export class AliensAPIService {
 
   constructor(private http: Http) {}
 

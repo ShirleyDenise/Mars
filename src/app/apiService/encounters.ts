@@ -4,7 +4,7 @@ import { Http, Response, Headers } from '@angular/http';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/operator/map';
 
-import { NewEncounter } from '../models';
+import { NewEncounter, Encounter } from '../models';
 import { ENCOUNTERS_URL } from '../models/API';
 
 interface EncounterPostRequest {
@@ -12,9 +12,10 @@ interface EncounterPostRequest {
 }
 
 @Injectable()
-export class EncounterAPIService {
+export class EncountersAPIService {
 
   constructor(private http: Http) {}
+  
   getEncounters(): Observable<Encounter[]> {
     return this.http.get(ENCOUNTERS_URL)
              .map((res: Response) => res.json().encounters);

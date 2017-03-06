@@ -91,7 +91,7 @@ export class RegisterComponent implements OnInit {
 
       this.colonistApiService.saveColonist(colonistPostRequest)
                              .subscribe((result) => {
-                               console.log('Colonist was saved:', result);
+                              //  console.log('Colonist was saved:', result);
 
             this.router.navigate(['encounters']);
                              });

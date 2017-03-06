@@ -3,8 +3,8 @@ import { Alien, NewEncounter } from '../models';
 import { Router } from '@angular/router';
 import { ALIENS_URL, ENCOUNTERS_URL } from '../models/API';
 
-import { AlienAPIService } from '../apiService/aliens';
-import { EncounterAPIService } from '../apiService/encounters';
+import { AliensAPIService } from '../apiService/aliens';
+import { EncountersAPIService } from '../apiService/encounters';
 
 import { FormGroup,
          FormControl,
@@ -18,7 +18,7 @@ import { FormGroup,
   selector: 'app-report',
   templateUrl: 'report.component.html',
   styleUrls: ['report.component.scss'],
-  providers: [AlienAPIService, EncounterAPIService]
+  providers: [AliensAPIService, EncountersAPIService]
 })
 export class ReportComponent implements OnInit {
 
@@ -26,8 +26,8 @@ export class ReportComponent implements OnInit {
   encounter: NewEncounter;
   reportForm: FormGroup;
 
-  constructor(private alienAPIService: AlienAPIService,
-              private encounterAPIService: EncounterAPIService) { 
+  constructor(private aliensAPIService: AliensAPIService,
+              private encountersAPIService: EncountersAPIService) { 
 
       this.getAliens();
 
@@ -47,14 +47,14 @@ export class ReportComponent implements OnInit {
   }
 
   getAliens() {
-    this.alienAPIService.getAliens()
+    this.aliensAPIService.getAliens()
                        .subscribe((result) => {
                         this.marsAliens = result;
                        });
     
   }
 
-  saveNewEncounter() {
+  postNewEncounter() {
     event.preventDefault();
     if(!this.reportForm.invalid) {
       //the form is invalid..
@@ -66,7 +66,7 @@ export class ReportComponent implements OnInit {
 
       const newEncounter = new NewEncounter(atype, date, action, colonist_id);
       const encounterPostRequest = { encounter: newEncounter };
-      this.encounterAPIService.saveNewEncounter(encounterPostRequest)
+      this.encountersAPIService.saveNewEncounter(encounterPostRequest)
                              .subscribe((result) => {
                                console.log('Encounter was saved:', result);
                              });
