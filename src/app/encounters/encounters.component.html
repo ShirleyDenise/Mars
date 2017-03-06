@@ -7,8 +7,12 @@
         <p>See an Alien? Report it!</p>
       </div>
 
-      <ul class="encounters-list">
-      </ul>
+      <div class="encounters-list">
+        <li class ="report-item" *ngFor="let encounterList of encounterLists">
+        <p>{{encounterList.date}}{{encounterList.atype}}</p>
+        <p>{{encounterList.action}}</p>
+        </li>
+      </div>
     
     </div>
   <footer>
