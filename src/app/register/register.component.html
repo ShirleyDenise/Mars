@@ -12,14 +12,14 @@
           <input type="number"  formControlName="age" placeholder="Age" name="colonistAge" />
           <div class="custom-select">
             <select formControlName="job_id" name="job_id">
-                <option value="none">Select occupation</option> 
+                <option value="">Select occupation</option> 
                 <option *ngFor="let job of marsJobs" value="{{ job.id }}">{{ job.name }}</option>
             </select>
           </div>
         </fieldset>
       
         <fieldset>
-          <button type="submit">Log Colonist</button>
+          <a routerLink="/encounters">Check in</a>
         </fieldset>
       </form>
     </div>

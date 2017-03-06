@@ -6,6 +6,7 @@
     position: relative;
     .title-encounters{
         text-align: center;
+        font-weight: 100;
         h1{
             margin-bottom: 0px;
         }
@@ -20,8 +21,10 @@ footer {
     text-align: center;
     height: 100vh;
     // margin: 0px;
-    button{
+    a{
+        text-decoration: none;
         font-size: 2rem;
+        font-weight: 100;
         color: white;
         background-color: transparent;
         border: none;
